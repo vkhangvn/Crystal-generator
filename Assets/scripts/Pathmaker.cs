@@ -14,12 +14,17 @@ using static UnityEditor.FilePathAttribute;
 
 public class Pathmaker : MonoBehaviour
 {
-    public int Objectcounter ;
-    public Transform floorPrefab;
-    public Transform PathmakerSpherePreFab;
+    public int sphereCounter ;
+    public GameObject crystalPrefab;
     public GameObject PathmakerPreFab;
-    public Vector3 destination;
     public float moveSpeed = 100f;
+    public sphereControl sphereControl;
+    public int totalSphere;
+    public GameObject sphereManager;
+    public bool noCrystalSpawn;
+    public bool sphereTouching;
+
+
 
     // STEP 2: ============================================================================================
     // translate the pseudocode below
@@ -28,34 +33,75 @@ public class Pathmaker : MonoBehaviour
     //	Declare a private integer called counter that starts at 0; 		// counter will track how many floor tiles I've instantiated
     //	Declare a public Transform called floorPrefab, assign the prefab in inspector;
     //	Declare a public Transform called pathmakerSpherePrefab, assign the prefab in inspector; 		// you'll have to make a "pathmakerSphere" prefab later
-
+    void Start()
+    {
+        sphereManager = GameObject.Find("sphereManager");
+        sphereControl = sphereManager.GetComponent<sphereControl>();
+        totalSphere = GetComponent<sphereControl>().totalSphere;
+    }
 
     void Update()
     {
-        if (Objectcounter < 50)
+
+        if (sphereControl.spawnSphere == true)
         {
-            float randomNumber = Random.Range(0.0f, 1.0f);
-            if (randomNumber < 0.25f)
+
+
+            if (sphereCounter < 50)
             {
-                transform.Rotate(new Vector3(0, 0, 90));
+                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+                float randomNumber = Random.Range(0.0f, 1.0f);
+                if (randomNumber < 0.25f)
+                {
+                    PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 90));
+                }
+                else if (randomNumber < 0.5f && randomNumber >= 0.25f)
+                {
+                    PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -90));
+                }
+                else if (randomNumber < 1f && randomNumber > 0.99f)
+                {
+                    if (sphereTouching == false)
+                    {
+                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, transform.position, Quaternion.identity);
+                        sphereControl.plus();
+                        sphereTouching = true;
+                    }
+                    
+
+                }
+                else if (sphereCounter >= 50)
+                {
+                    Destroy(PathmakerPreFab);
+
+                }
             }
-            else if ( randomNumber < 0.5f && randomNumber >= 0.25f)
+
+            if (noCrystalSpawn == false )
             {
-                transform.Rotate(new Vector3(0, 0, -90));
+                GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position , Quaternion.identity);
+                noCrystalSpawn = true;
             }
-            else if (randomNumber < 1f && randomNumber>0.99f)
-            {
-                Object.Instantiate(PathmakerPreFab, PathmakerSpherePreFab, PathmakerSpherePreFab);
-                Objectcounter++;
-            }
-            else if (Objectcounter >= 50)
-            {
-                Destroy(PathmakerPreFab);
-            }
-            
         }
 
-        
+       
+        }
+  
+
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Crystal"))
+        {
+            noCrystalSpawn = false;
+            Debug.Log("1");
+        }
+
+        if (other.CompareTag("Sphere"))
+        {
+            sphereTouching = false;
+            Debug.Log("1");
+        }
+
 
 
         //		If counter is less than 50, then:

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4734056119267121192}
   - component: {fileID: 6306577938922288913}
   - component: {fileID: 1285351403960408384}
+  - component: {fileID: 303230951611944075}
   m_Layer: 0
   m_Name: PathMakerSphere
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3101171746790608031}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -57,7 +58,7 @@ SphereCollider:
     serializedVersion: 2
     m_Bits: 0
   m_LayerOverridePriority: 0
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
@@ -105,3 +106,25 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &303230951611944075
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3101171746790608031}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5575b50532c45f4984a0392f98e35f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sphereCounter: 0
+  floorPrefab: {fileID: 1039133240164060596, guid: 0409f604f763a2744ab34fe7090e855e,
+    type: 3}
+  PathmakerSpherePreFab: {fileID: 0}
+  PathmakerPreFab: {fileID: 3101171746790608031}
+  destination: {x: 0, y: 0, z: 0}
+  moveSpeed: 100
+  sphereControl: {fileID: 0}
+  totalSphere: 0
+  sphereManager: {fileID: 0}
