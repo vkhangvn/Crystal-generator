@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Security.Cryptography;
 using UnityEngine;
+using UnityEngine.UIElements;
+using static UnityEditor.FilePathAttribute;
 
 // INTRO TO PROC GEN LAB
 // all students: complete steps 1-6, as listed in this file
@@ -11,6 +14,12 @@ using UnityEngine;
 
 public class Pathmaker : MonoBehaviour
 {
+    public int Objectcounter ;
+    public Transform floorPrefab;
+    public Transform PathmakerSpherePreFab;
+    public GameObject PathmakerPreFab;
+    public Vector3 destination;
+    public float moveSpeed = 100f;
 
     // STEP 2: ============================================================================================
     // translate the pseudocode below
@@ -23,6 +32,32 @@ public class Pathmaker : MonoBehaviour
 
     void Update()
     {
+        if (Objectcounter < 50)
+        {
+            float randomNumber = Random.Range(0.0f, 1.0f);
+            if (randomNumber < 0.25f)
+            {
+                transform.Rotate(new Vector3(0, 0, 90));
+            }
+            else if ( randomNumber < 0.5f && randomNumber >= 0.25f)
+            {
+                transform.Rotate(new Vector3(0, 0, -90));
+            }
+            else if (randomNumber < 1f && randomNumber>0.99f)
+            {
+                Object.Instantiate(PathmakerPreFab, PathmakerSpherePreFab, PathmakerSpherePreFab);
+                Objectcounter++;
+            }
+            else if (Objectcounter >= 50)
+            {
+                Destroy(PathmakerPreFab);
+            }
+            
+        }
+
+        
+
+
         //		If counter is less than 50, then:
         //			Generate a random number from 0.0f to 1.0f;
         //			If random number is less than 0.25f, then rotate myself 90 degrees;
