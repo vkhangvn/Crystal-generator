@@ -2,7 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Security.Cryptography;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
+using static UnityEditor.Experimental.GraphView.GraphView;
 using static UnityEditor.FilePathAttribute;
 
 // INTRO TO PROC GEN LAB
@@ -20,9 +22,20 @@ public class Pathmaker : MonoBehaviour
     public float moveSpeed = 100f;
     public sphereControl sphereControl;
     public int totalSphere;
+    public int totalCrystal;
     public GameObject sphereManager;
     public bool noCrystalSpawn;
     public bool sphereTouching;
+    public bool startGenerates;
+    public float objectDetectRange = 0.5f;
+    public int wormNumber;
+    public float wormlength;
+    public Button button;
+    public GameObject labCamera;
+    public GameObject microscopeCamera;
+    public GameObject menu;
+
+
 
 
 
@@ -38,87 +51,96 @@ public class Pathmaker : MonoBehaviour
         sphereManager = GameObject.Find("sphereManager");
         sphereControl = sphereManager.GetComponent<sphereControl>();
         totalSphere = GetComponent<sphereControl>().totalSphere;
+
+        totalCrystal = GetComponent<sphereControl>().totalCrystal;
+
+
+
+        Button btn = button.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
+
+    }
+
+    public void TaskOnClick()
+    {
+        labCamera.SetActive(false);
+        microscopeCamera.SetActive(true);
+        menu.SetActive(false);
     }
 
     void Update()
     {
-
-        if (sphereControl.spawnSphere == true)
+        if (microscopeCamera.activeInHierarchy == true)
         {
+           
 
 
-            if (sphereCounter < 50)
-            {
-                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
-                float randomNumber = Random.Range(0.0f, 1.0f);
-                if (randomNumber < 0.25f)
-                {
-                    PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 90));
-                }
-                else if (randomNumber < 0.5f && randomNumber >= 0.25f)
-                {
-                    PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -90));
-                }
-                else if (randomNumber < 1f && randomNumber > 0.99f)
-                {
-                    if (sphereTouching == false)
+                    transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+                    float randomNumber = Random.Range(0.0f, 1.0f);
+                    if (randomNumber < 0.25f)
                     {
-                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, transform.position, Quaternion.identity);
-                        sphereControl.plus();
-                        sphereTouching = true;
+                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 20));
                     }
-                    
+                    else if (randomNumber < 0.5f && randomNumber >= 0.25f)
+                    {
+                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -10));
+                    }
+                    else if (randomNumber < 1f && randomNumber > 0.99f)
+                    {
+                    if (sphereControl.spawnSphere == true)
+                    {
 
+
+                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(0, 10), Random.Range(-5f, 10f), 0), Quaternion.identity);
+                        sphereControl.plus();
+                    }
+
+
+                    }
+                    else if (sphereCounter >= 50)
+                    {
+                        Destroy(PathmakerPreFab);
+                    }
                 }
-                else if (sphereCounter >= 50)
+
+                if (sphereControl.spawnCrystal == true)
                 {
-                    Destroy(PathmakerPreFab);
+                    {
+                        GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position, Quaternion.identity);
+                        sphereControl.crystal();
 
+                    }
                 }
             }
-
-            if (noCrystalSpawn == false )
-            {
-                GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position , Quaternion.identity);
-                noCrystalSpawn = true;
-            }
         }
 
-       
-        }
+      
+        
+
   
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if (other.CompareTag("Crystal"))
-        {
-            noCrystalSpawn = false;
-            Debug.Log("1");
-        }
-
-        if (other.CompareTag("Sphere"))
-        {
-            sphereTouching = false;
-            Debug.Log("1");
-        }
 
 
 
-        //		If counter is less than 50, then:
-        //			Generate a random number from 0.0f to 1.0f;
-        //			If random number is less than 0.25f, then rotate myself 90 degrees;
-        //				... Else if number is 0.25f-0.5f, then rotate myself -90 degrees;
-        //				... Else if number is 0.99f-1.0f, then instantiate a pathmakerSpherePrefab clone at my current position;
-        //			// end elseIf
 
-        //			Instantiate a floorPrefab clone at current position;
-        //			Move forward ("forward", as in, the direction I'm currently facing) by 5 units;
-        //			Increment counter;
-        //		Else:
-        //			Destroy my game object; 		// self destruct if I've made enough tiles already
-    }
+    //		If counter is less than 50, then:
+    //			Generate a random number from 0.0f to 1.0f;
+    //			If random number is less than 0.25f, then rotate myself 90 degrees;
+    //				... Else if number is 0.25f-0.5f, then rotate myself -90 degrees;
+    //				... Else if number is 0.99f-1.0f, then instantiate a pathmakerSpherePrefab clone at my current position;
+    //			// end elseIf
 
-}
+    //			Instantiate a floorPrefab clone at current position;
+    //			Move forward ("forward", as in, the direction I'm currently facing) by 5 units;
+    //			Increment counter;
+    //		Else:
+    //			Destroy my game object; 		// self destruct if I've made enough tiles already
+
+
+
+
+
+
 
 // MORE STEPS BELOW!!!........
 

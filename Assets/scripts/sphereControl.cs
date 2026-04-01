@@ -8,23 +8,35 @@ public class sphereControl : MonoBehaviour
     public GameObject sphereManager;
     public bool spawnSphere;
 
+    public int totalCrystal = 0;
+    public bool spawnCrystal;
+
     // Start is called before the first frame update
     void Start()
     {
         spawnSphere = true;
-}
+        spawnCrystal = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
-        if(totalSphere > 10)
+        if(totalSphere > 3)
         {
             spawnSphere = false;
         }
-            
+        if (totalCrystal > 30000)
+        {
+            spawnCrystal = false;
+        }
     }
-    public void plus ()
+    public void plus()
     {
         totalSphere++;
+    }
+
+    public void crystal()
+    {
+        totalCrystal++;
     }
 }
