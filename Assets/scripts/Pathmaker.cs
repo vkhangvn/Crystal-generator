@@ -27,14 +27,15 @@ public class Pathmaker : MonoBehaviour
     public bool noCrystalSpawn;
     public bool sphereTouching;
     public bool startGenerates;
-    public float objectDetectRange = 0.5f;
+    public float objectDetectRange = 0.2f;
     public int wormNumber;
     public float wormlength;
     public Button button;
     public GameObject labCamera;
     public GameObject microscopeCamera;
     public GameObject menu;
-
+    public LayerMask ignoreLayer;
+    public bool wallHit;
 
 
 
@@ -58,6 +59,8 @@ public class Pathmaker : MonoBehaviour
 
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        wallHit = false;
+
 
     }
 
@@ -70,54 +73,79 @@ public class Pathmaker : MonoBehaviour
 
     void Update()
     {
+
+
+
+
+
+
         if (microscopeCamera.activeInHierarchy == true)
         {
-           
 
+            Ray2D crystalRay = new Ray2D(transform.position, transform.up);
+            Debug.DrawRay(crystalRay.origin, crystalRay.direction * objectDetectRange);
+            if (Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange, ~ignoreLayer))
+            {
+                RaycastHit2D objectHit = Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange);
+                Debug.Log(objectHit);
 
-                    transform.Translate(0, moveSpeed * Time.deltaTime, 0);
-                    float randomNumber = Random.Range(0.0f, 1.0f);
-                    if (randomNumber < 0.25f)
-                    {
-                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 25));
-                    }
-                    else if (randomNumber < 0.5f && randomNumber >= 0.25f)
-                    {
-                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -12));
-                    }
-                    else if (randomNumber < 1f && randomNumber > 0.99f)
-                    {
+                StartCoroutine(Timer());
+            }
+            
+
+            if (wallHit == false)
+            {
+                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+                float randomNumber = Random.Range(0.0f, 1.0f);
+                if (randomNumber < 0.25f)
+                {
+                    PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 14));
+                }
+                else if (randomNumber < 0.5f && randomNumber >= 0.25f)
+                {
+                    PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -10));
+                }
+                else if (randomNumber < 1f && randomNumber > 0.99f)
+                {
                     if (sphereControl.spawnSphere == true)
                     {
 
 
-                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-4f, 7f), Random.Range(-4f, 4f), 0), Quaternion.identity);
+                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-40f, -1f), Random.Range(-21f, 10f), 0), Quaternion.identity);
                         sphereControl.plus();
                     }
 
 
-                    }
-                    else if (sphereCounter >= 50)
-                    {
-                        Destroy(PathmakerPreFab);
-                    }
                 }
-
-                if (sphereControl.spawnCrystal == true)
+                else if (sphereCounter >= 50)
                 {
-                    {
-                        GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position, Quaternion.identity);
-                        sphereControl.crystal();
+                    Destroy(PathmakerPreFab);
+                }
+            }
 
-                    }
+            if (sphereControl.spawnCrystal == true)
+            {
+                {
+                    GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position, Quaternion.identity);
+                    sphereControl.crystal();
+
                 }
             }
         }
+    }
+    IEnumerator Timer()
+    {
+        wallHit = true;
+        transform.Translate(0, moveSpeed * Time.deltaTime, -180);
+        yield return new WaitForSeconds(1);
+        wallHit = false;
+    }
+}
 
-      
-        
 
-  
+
+
+
 
 
 
@@ -130,11 +158,11 @@ public class Pathmaker : MonoBehaviour
     //				... Else if number is 0.99f-1.0f, then instantiate a pathmakerSpherePrefab clone at my current position;
     //			// end elseIf
 
-    //			Instantiate a floorPrefab clone at current position;
-    //			Move forward ("forward", as in, the direction I'm currently facing) by 5 units;
-    //			Increment counter;
-    //		Else:
-    //			Destroy my game object; 		// self destruct if I've made enough tiles already
+//			Instantiate a floorPrefab clone at current position;
+//			Move forward ("forward", as in, the direction I'm currently facing) by 5 units;
+//			Increment counter;
+//		Else:
+//			Destroy my game object; 		// self destruct if I've made enough tiles already
 
 
 

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 2288546771244520979}
   - component: {fileID: 1239098436026014501}
   - component: {fileID: 7075991652913692592}
-  - component: {fileID: 681554747106473942}
   m_Layer: 0
   m_Name: PathMakerSphere 1
   m_TagString: Sphere
@@ -104,27 +103,15 @@ MonoBehaviour:
   moveSpeed: 10
   sphereControl: {fileID: 0}
   totalSphere: 0
+  totalCrystal: 0
   sphereManager: {fileID: 0}
   noCrystalSpawn: 0
   sphereTouching: 0
---- !u!135 &681554747106473942
-SphereCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2424282093837279157}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 1
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Radius: 0.5
-  m_Center: {x: 0, y: 0, z: 0}
+  startGenerates: 0
+  objectDetectRange: 0.5
+  wormNumber: 0
+  wormlength: 0
+  button: {fileID: 0}
+  labCamera: {fileID: 0}
+  microscopeCamera: {fileID: 0}
+  menu: {fileID: 0}
