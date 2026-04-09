@@ -79,11 +79,11 @@ public class Pathmaker : MonoBehaviour
                     float randomNumber = Random.Range(0.0f, 1.0f);
                     if (randomNumber < 0.25f)
                     {
-                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 20));
+                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, 25));
                     }
                     else if (randomNumber < 0.5f && randomNumber >= 0.25f)
                     {
-                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -10));
+                        PathmakerPreFab.transform.Rotate(new Vector3(0, 0, -12));
                     }
                     else if (randomNumber < 1f && randomNumber > 0.99f)
                     {
@@ -91,7 +91,7 @@ public class Pathmaker : MonoBehaviour
                     {
 
 
-                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(0, 10), Random.Range(-5f, 10f), 0), Quaternion.identity);
+                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-4f, 7f), Random.Range(-4f, 4f), 0), Quaternion.identity);
                         sphereControl.plus();
                     }
 
