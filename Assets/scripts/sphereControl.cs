@@ -20,6 +20,8 @@ public class sphereControl : MonoBehaviour
     public Slider sphereLimitSlider;
     public Slider crystalLimitSlider;
 
+    public bool createHead;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -44,6 +46,7 @@ public class sphereControl : MonoBehaviour
         if (totalCrystal > crystalLimit)
         {
             spawnCrystal = false;
+            createHead = true;
         }
     }
     public void plus()

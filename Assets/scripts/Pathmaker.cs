@@ -18,6 +18,7 @@ public class Pathmaker : MonoBehaviour
 {
     public int sphereCounter ;
     public GameObject crystalPrefab;
+    public GameObject headPrefab;
     public GameObject PathmakerPreFab;
     public float moveSpeed = 100f;
     public sphereControl sphereControl;
@@ -36,7 +37,8 @@ public class Pathmaker : MonoBehaviour
     public GameObject menu;
     public LayerMask ignoreLayer;
     public bool wallHit;
-
+    public bool createHead;
+    public bool headSpawned;
 
 
 
@@ -54,6 +56,7 @@ public class Pathmaker : MonoBehaviour
         totalSphere = GetComponent<sphereControl>().totalSphere;
 
         totalCrystal = GetComponent<sphereControl>().totalCrystal;
+        createHead = GetComponent<sphereControl>().createHead;
 
 
 
@@ -131,6 +134,12 @@ public class Pathmaker : MonoBehaviour
 
                 }
             }
+
+            else if(sphereControl.spawnCrystal == false)
+            {
+                createHead = true;
+                spawnHead();
+            }
         }
     }
     IEnumerator Timer()
@@ -139,6 +148,18 @@ public class Pathmaker : MonoBehaviour
         transform.Translate(0, moveSpeed * Time.deltaTime, -180);
         yield return new WaitForSeconds(1);
         wallHit = false;
+    }
+
+ public void spawnHead()
+    {
+        if (createHead == true && headSpawned == false)
+        {
+            
+            
+            GameObject newHead = Object.Instantiate(headPrefab, transform.position, Quaternion.identity);
+            headSpawned = true;
+            createHead = false;
+        }
     }
 }
 
