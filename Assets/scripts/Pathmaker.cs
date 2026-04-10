@@ -39,6 +39,7 @@ public class Pathmaker : MonoBehaviour
     public bool wallHit;
     public bool createHead;
     public bool headSpawned;
+    public GameObject center;
 
 
 
@@ -84,21 +85,25 @@ public class Pathmaker : MonoBehaviour
 
         if (microscopeCamera.activeInHierarchy == true)
         {
-
+            
             Ray2D crystalRay = new Ray2D(transform.position, transform.up);
             Debug.DrawRay(crystalRay.origin, crystalRay.direction * objectDetectRange);
-            if (Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange, ~ignoreLayer))
+            if (Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange, ~ignoreLayer) && wallHit == false)
             {
                 RaycastHit2D objectHit = Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange);
                 Debug.Log(objectHit);
+                wallHit = true;
+      
 
-                StartCoroutine(Timer());
+
             }
+
             
+            transform.Translate(0, moveSpeed * Time.deltaTime, 0);
 
             if (wallHit == false)
             {
-                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+            
                 float randomNumber = Random.Range(0.0f, 1.0f);
                 if (randomNumber < 0.25f)
                 {
@@ -114,7 +119,7 @@ public class Pathmaker : MonoBehaviour
                     {
 
 
-                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-40f, -1f), Random.Range(-21f, 10f), 0), Quaternion.identity);
+                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-20f, 17f), Random.Range(13f, -14f), 0), Quaternion.identity);
                         sphereControl.plus();
                     }
 
@@ -123,6 +128,20 @@ public class Pathmaker : MonoBehaviour
                 else if (sphereCounter >= 50)
                 {
                     Destroy(PathmakerPreFab);
+                }
+            }
+            else if (wallHit)
+            {
+                PathmakerPreFab.transform.position = Vector2.MoveTowards(PathmakerPreFab.transform.position, center.transform.position, moveSpeed * Time.deltaTime);
+
+
+                float distance = Vector3.Distance(PathmakerPreFab.transform.position, center.transform.position);
+                float positiveDistance = Mathf.Abs(distance);
+
+                if (positiveDistance < 15)
+                {
+                    Debug.Log("work");
+                         wallHit = false;
                 }
             }
 
@@ -140,15 +159,11 @@ public class Pathmaker : MonoBehaviour
                 createHead = true;
                 spawnHead();
             }
+
+            
         }
     }
-    IEnumerator Timer()
-    {
-        wallHit = true;
-        transform.Translate(0, moveSpeed * Time.deltaTime, -180);
-        yield return new WaitForSeconds(1);
-        wallHit = false;
-    }
+
 
  public void spawnHead()
     {
