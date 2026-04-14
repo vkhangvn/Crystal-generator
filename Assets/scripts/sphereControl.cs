@@ -21,6 +21,7 @@ public class sphereControl : MonoBehaviour
     public Slider crystalLimitSlider;
     public Slider colorSlider;
 
+    public float numberOfColor;
     public bool createHead;
 
     public float moveSpeed;
@@ -76,6 +77,12 @@ public class sphereControl : MonoBehaviour
 
     }
 
+    public void setcolorLimit()
+    {
+        colorSlider.onValueChanged.AddListener(delegate { colorChangeCheck(); });
+
+    }
+
     public void sphereChangeCheck()
     {
         sphereLimit = sphereLimitSlider.value;
@@ -85,6 +92,12 @@ public class sphereControl : MonoBehaviour
     public void crystalChangeCheck()
     {
         crystalLimit = crystalLimitSlider.value;
+
+    }
+
+    public void colorChangeCheck()
+    {
+        numberOfColor = colorSlider.value;
 
     }
 }

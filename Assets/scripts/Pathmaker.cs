@@ -16,7 +16,7 @@ using static UnityEditor.FilePathAttribute;
 
 public class Pathmaker : MonoBehaviour
 {
-    public int sphereCounter ;
+    public int sphereCounter;
     public GameObject crystalPrefab;
     public GameObject redcrystalPrefab;
     public GameObject greencrystalPrefab;
@@ -40,10 +40,7 @@ public class Pathmaker : MonoBehaviour
     public int randomColor;
     public GameObject redHeadPrefab;
     public GameObject greenHeadPrefab;
-
-    public bool redEnable;
-    public bool greenEnable;
-    public bool blueEnable;
+    public float numberOfColor;
 
 
     // STEP 2: ============================================================================================
@@ -53,14 +50,29 @@ public class Pathmaker : MonoBehaviour
     //	Declare a private integer called counter that starts at 0; 		// counter will track how many floor tiles I've instantiated
     //	Declare a public Transform called floorPrefab, assign the prefab in inspector;
     //	Declare a public Transform called pathmakerSpherePrefab, assign the prefab in inspector; 		// you'll have to make a "pathmakerSphere" prefab later
+
     void Start()
     {
 
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         wallHit = false;
+        numberOfColor = sphereControl.numberOfColor;
 
-        randomColor = Random.Range(1, 4);
+        if (numberOfColor == 1)
+        {
+            randomColor = 1;
+        }
+        
+        if (numberOfColor == 2)
+        {
+            randomColor = Random.Range(1, 3);
+        }
+
+        if (numberOfColor == 3)
+        {
+            randomColor = Random.Range(1, 4);
+        }
 
     }
 
@@ -171,7 +183,6 @@ public class Pathmaker : MonoBehaviour
                 {
                     if (sphereControl.spawnSphere == true)
                     {
-
 
                         GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-17f, 14f), Random.Range(10f, -11f), 0), Quaternion.identity);
                         sphereControl.plus();
