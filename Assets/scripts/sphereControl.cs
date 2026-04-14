@@ -14,13 +14,18 @@ public class sphereControl : MonoBehaviour
     public bool spawnCrystal;
     public GameObject microsopeCamera;
 
-    public float crystalLimit = 0;
-    public float sphereLimit = 0;
+    public float crystalLimit;
+    public float sphereLimit;
 
     public Slider sphereLimitSlider;
     public Slider crystalLimitSlider;
+    public Slider colorSlider;
 
     public bool createHead;
+
+    public float moveSpeed;
+    public GameObject PathMakerSphere;
+    public Pathmaker Pathmaker;
 
     // Start is called before the first frame update
     void Start()
@@ -45,8 +50,8 @@ public class sphereControl : MonoBehaviour
         }
         if (totalCrystal > crystalLimit)
         {
-            spawnCrystal = false;
             createHead = true;
+            
         }
     }
     public void plus()

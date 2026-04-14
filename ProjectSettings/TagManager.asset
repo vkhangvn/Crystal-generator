@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Crystal
   - Sphere
+  - crystalParticle
   layers:
   - Default
   - TransparentFX

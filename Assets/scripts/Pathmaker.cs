@@ -18,29 +18,32 @@ public class Pathmaker : MonoBehaviour
 {
     public int sphereCounter ;
     public GameObject crystalPrefab;
+    public GameObject redcrystalPrefab;
+    public GameObject greencrystalPrefab;
     public GameObject headPrefab;
     public GameObject PathmakerPreFab;
-    public float moveSpeed = 100f;
+    public float moveSpeed = 50f;
     public sphereControl sphereControl;
     public int totalSphere;
     public int totalCrystal;
-    public GameObject sphereManager;
-    public bool noCrystalSpawn;
-    public bool sphereTouching;
-    public bool startGenerates;
     public float objectDetectRange = 0.2f;
-    public int wormNumber;
-    public float wormlength;
     public Button button;
     public GameObject labCamera;
     public GameObject microscopeCamera;
     public GameObject menu;
-    public LayerMask ignoreLayer;
+    public LayerMask hitLayer;
     public bool wallHit;
     public bool createHead;
     public bool headSpawned;
     public GameObject center;
+    public GameObject exitButton;
+    public int randomColor;
+    public GameObject redHeadPrefab;
+    public GameObject greenHeadPrefab;
 
+    public bool redEnable;
+    public bool greenEnable;
+    public bool blueEnable;
 
 
     // STEP 2: ============================================================================================
@@ -52,19 +55,12 @@ public class Pathmaker : MonoBehaviour
     //	Declare a public Transform called pathmakerSpherePrefab, assign the prefab in inspector; 		// you'll have to make a "pathmakerSphere" prefab later
     void Start()
     {
-        sphereManager = GameObject.Find("sphereManager");
-        sphereControl = sphereManager.GetComponent<sphereControl>();
-        totalSphere = GetComponent<sphereControl>().totalSphere;
-
-        totalCrystal = GetComponent<sphereControl>().totalCrystal;
-        createHead = GetComponent<sphereControl>().createHead;
-
-
 
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         wallHit = false;
 
+        randomColor = Random.Range(1, 4);
 
     }
 
@@ -73,14 +69,16 @@ public class Pathmaker : MonoBehaviour
         labCamera.SetActive(false);
         microscopeCamera.SetActive(true);
         menu.SetActive(false);
+        exitButton.SetActive(true);
     }
+    public void TaskOnClick2()
+    {
+        SceneManager.LoadScene("CrystalGenerator");
+    }
+
 
     void Update()
     {
-
-
-
-
 
 
         if (microscopeCamera.activeInHierarchy == true)
@@ -88,22 +86,78 @@ public class Pathmaker : MonoBehaviour
             
             Ray2D crystalRay = new Ray2D(transform.position, transform.up);
             Debug.DrawRay(crystalRay.origin, crystalRay.direction * objectDetectRange);
-            if (Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange, ~ignoreLayer) && wallHit == false)
+            if (Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange, ~hitLayer) && wallHit == false)
             {
                 RaycastHit2D objectHit = Physics2D.Raycast(crystalRay.origin, crystalRay.direction * objectDetectRange);
                 Debug.Log(objectHit);
                 wallHit = true;
-      
-
-
             }
 
-            
-            transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+
+            if (sphereControl.spawnCrystal == true)
+            {
+                {
+                    if (randomColor == 1)
+                    {
+                        if (sphereControl.createHead == false)
+                        {
+
+                            GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position, Quaternion.identity);
+                            sphereControl.crystal();
+                        }
+
+                        else if (sphereControl.createHead == true && headSpawned == false)
+                        {
+                            moveSpeed = 0;
+                            GameObject newHead = Object.Instantiate(headPrefab, transform.position, Quaternion.identity);
+                            headSpawned = true;
+                            sphereControl.createHead = false;
+                        }
+                    }
+
+                    if (randomColor == 2)
+                    {
+                        if (sphereControl.createHead == false)
+                        {
+
+                            GameObject newCrystal = Object.Instantiate(redcrystalPrefab, transform.position, Quaternion.identity);
+                            sphereControl.crystal();
+                        }
+
+                        else if (sphereControl.createHead == true && headSpawned == false)
+                        {
+                            moveSpeed = 0;
+                            GameObject newHead = Object.Instantiate(redHeadPrefab, transform.position, Quaternion.identity);
+                            headSpawned = true;
+                            sphereControl.createHead = false;
+                        }
+                    }
+
+                    if (randomColor == 3)
+                    {
+                        if (sphereControl.createHead == false)
+                        {
+                            GameObject newCrystal = Object.Instantiate(greencrystalPrefab, transform.position, Quaternion.identity);
+                            sphereControl.crystal();
+                        }
+
+                        else if (sphereControl.createHead == true && headSpawned == false)
+                        {
+                            moveSpeed = 0;
+                            GameObject newHead = Object.Instantiate(greenHeadPrefab, transform.position, Quaternion.identity);
+                            headSpawned = true;
+                            sphereControl.createHead = false;
+                        }
+                    }
+
+                }
+            }
 
             if (wallHit == false)
             {
-            
+                transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+
+
                 float randomNumber = Random.Range(0.0f, 1.0f);
                 if (randomNumber < 0.25f)
                 {
@@ -119,64 +173,38 @@ public class Pathmaker : MonoBehaviour
                     {
 
 
-                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-20f, 17f), Random.Range(13f, -14f), 0), Quaternion.identity);
+                        GameObject newSphere = Object.Instantiate(PathmakerPreFab, new Vector3(Random.Range(-17f, 14f), Random.Range(10f, -11f), 0), Quaternion.identity);
                         sphereControl.plus();
                     }
 
+                }
 
-                }
-                else if (sphereCounter >= 50)
-                {
-                    Destroy(PathmakerPreFab);
-                }
             }
+            
             else if (wallHit)
             {
+                Debug.Log("work");
                 PathmakerPreFab.transform.position = Vector2.MoveTowards(PathmakerPreFab.transform.position, center.transform.position, moveSpeed * Time.deltaTime);
 
 
                 float distance = Vector3.Distance(PathmakerPreFab.transform.position, center.transform.position);
                 float positiveDistance = Mathf.Abs(distance);
 
-                if (positiveDistance < 15)
+                if (positiveDistance < 13)
                 {
-                    Debug.Log("work");
+
                          wallHit = false;
                 }
             }
 
-            if (sphereControl.spawnCrystal == true)
-            {
-                {
-                    GameObject newCrystal = Object.Instantiate(crystalPrefab, transform.position, Quaternion.identity);
-                    sphereControl.crystal();
-
-                }
-            }
-
-            else if(sphereControl.spawnCrystal == false)
-            {
-                createHead = true;
-                spawnHead();
-            }
+           
 
             
         }
     }
-
-
- public void spawnHead()
-    {
-        if (createHead == true && headSpawned == false)
-        {
-            
-            
-            GameObject newHead = Object.Instantiate(headPrefab, transform.position, Quaternion.identity);
-            headSpawned = true;
-            createHead = false;
-        }
     }
-}
+
+ 
 
 
 
