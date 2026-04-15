@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\zooming.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\zooming.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -22,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "zooming.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\zooming.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\zooming.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\zooming.cs",
+              "RelativeToolTip": "Assets\\scripts\\zooming.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-14T15:31:52.06Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "StartGame.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\StartGame.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\StartGame.cs",
@@ -34,12 +51,11 @@
               "RelativeToolTip": "Assets\\scripts\\StartGame.cs",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T07:49:06.973Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T07:49:06.973Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Pathmaker.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Pathmaker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Pathmaker.cs",
@@ -52,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "sphereControl.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\sphereControl.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\sphereControl.cs",
@@ -60,8 +76,7 @@
               "RelativeToolTip": "Assets\\scripts\\sphereControl.cs",
               "ViewState": "AgIAAEsAAAAAAAAAAAAAAGMAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T07:43:32.473Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-13T07:43:32.473Z"
             }
           ]
         }

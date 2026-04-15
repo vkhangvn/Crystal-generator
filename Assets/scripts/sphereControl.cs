@@ -34,7 +34,7 @@ public class sphereControl : MonoBehaviour
         spawnSphere = true;
         sphereLimit = 1;
         crystalLimit = 500;
-
+        numberOfColor = 1;
 
     }
 

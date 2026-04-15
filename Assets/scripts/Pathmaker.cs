@@ -41,7 +41,10 @@ public class Pathmaker : MonoBehaviour
     public GameObject redHeadPrefab;
     public GameObject greenHeadPrefab;
     public float numberOfColor;
-
+    private bool stopRandomColor;
+    public GameObject spawnSystem;
+    public GameObject labSound;
+    public GameObject scopeSound;
 
     // STEP 2: ============================================================================================
     // translate the pseudocode below
@@ -57,40 +60,75 @@ public class Pathmaker : MonoBehaviour
         Button btn = button.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         wallHit = false;
+
         numberOfColor = sphereControl.numberOfColor;
 
         if (numberOfColor == 1)
         {
             randomColor = 1;
+
         }
-        
+
         if (numberOfColor == 2)
         {
             randomColor = Random.Range(1, 3);
+
         }
 
         if (numberOfColor == 3)
         {
             randomColor = Random.Range(1, 4);
+
         }
 
     }
 
+
     public void TaskOnClick()
     {
+        crystalPrefab.SetActive(true);
+        greencrystalPrefab.SetActive(true);
+        redcrystalPrefab.SetActive(true);
         labCamera.SetActive(false);
         microscopeCamera.SetActive(true);
         menu.SetActive(false);
         exitButton.SetActive(true);
+        spawnSystem.SetActive(true);
+        labSound.SetActive(false);
+        scopeSound.SetActive(true);
+        numberOfColor = sphereControl.numberOfColor;
+
+        if (numberOfColor == 1)
+        {
+            randomColor = 1;
+
+        }
+
+        if (numberOfColor == 2)
+        {
+            randomColor = Random.Range(1, 3);
+
+        }
+
+        if (numberOfColor == 3)
+        {
+            randomColor = Random.Range(1, 4);
+
+        }
     }
+
     public void TaskOnClick2()
     {
         SceneManager.LoadScene("CrystalGenerator");
     }
 
 
+
+
     void Update()
     {
+
+
 
 
         if (microscopeCamera.activeInHierarchy == true)
