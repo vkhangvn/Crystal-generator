@@ -28,6 +28,11 @@ public class sphereControl : MonoBehaviour
     public GameObject PathMakerSphere;
     public Pathmaker Pathmaker;
 
+    public GameObject turningSound1;
+    public GameObject turningSound2;
+    public GameObject turningSound3;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -86,18 +91,39 @@ public class sphereControl : MonoBehaviour
     public void sphereChangeCheck()
     {
         sphereLimit = sphereLimitSlider.value;
-
+        StartCoroutine(Turn1());
     }
 
     public void crystalChangeCheck()
     {
         crystalLimit = crystalLimitSlider.value;
-
+        StartCoroutine(Turn2());
     }
 
     public void colorChangeCheck()
     {
         numberOfColor = colorSlider.value;
+        StartCoroutine(Turn3());
+    }
 
+    IEnumerator Turn1()
+    {
+        turningSound1.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        turningSound1.SetActive(false);
+    }
+
+    IEnumerator Turn2()
+    {
+        turningSound2.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        turningSound2.SetActive(false);
+    }
+
+    IEnumerator Turn3()
+    {
+        turningSound3.SetActive(true);
+        yield return new WaitForSeconds(0.5f);
+        turningSound3.SetActive(false);
     }
 }

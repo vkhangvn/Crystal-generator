@@ -163,6 +163,7 @@ public class Pathmaker : MonoBehaviour
                             GameObject newHead = Object.Instantiate(headPrefab, transform.position, Quaternion.identity);
                             headSpawned = true;
                             sphereControl.createHead = false;
+                            spawnSound.SetActive(false);
                         }
                     }
 
@@ -181,6 +182,7 @@ public class Pathmaker : MonoBehaviour
                             GameObject newHead = Object.Instantiate(redHeadPrefab, transform.position, Quaternion.identity);
                             headSpawned = true;
                             sphereControl.createHead = false;
+                            spawnSound.SetActive(false);
                         }
                     }
 
@@ -198,6 +200,7 @@ public class Pathmaker : MonoBehaviour
                             GameObject newHead = Object.Instantiate(greenHeadPrefab, transform.position, Quaternion.identity);
                             headSpawned = true;
                             sphereControl.createHead = false;
+                            spawnSound.SetActive(false);
                         }
                     }
 
