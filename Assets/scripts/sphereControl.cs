@@ -31,6 +31,14 @@ public class sphereControl : MonoBehaviour
     public GameObject turningSound1;
     public GameObject turningSound2;
     public GameObject turningSound3;
+    public GameObject wormSound1;
+    public GameObject wormSound2;
+    public GameObject wormSound3;
+    public bool wormPlaying;
+    public int randomSound;
+
+
+    public GameObject scopeCamera;
 
 
     // Start is called before the first frame update
@@ -58,6 +66,36 @@ public class sphereControl : MonoBehaviour
         {
             createHead = true;
             
+        }
+
+        if (scopeCamera.activeInHierarchy)
+        {
+            if (wormPlaying == false)
+            {
+                randomSound = Random.Range(0, 15);
+                if (randomSound == 1)
+                {
+                    wormPlaying = true;
+                    StartCoroutine(Worm1());
+
+                }
+
+                if (randomSound == 2)
+                {
+                    wormPlaying = true;
+                    StartCoroutine(Worm2());
+
+                }
+
+                if (randomSound == 3)
+                {
+                    wormPlaying = true;
+                    StartCoroutine(Worm3());
+
+                }
+            }
+
+           
         }
     }
     public void plus()
@@ -125,5 +163,29 @@ public class sphereControl : MonoBehaviour
         turningSound3.SetActive(true);
         yield return new WaitForSeconds(0.5f);
         turningSound3.SetActive(false);
+    }
+
+    IEnumerator Worm1()
+    {
+        wormSound1.SetActive(true);
+        yield return new WaitForSeconds(15f);
+        wormSound1.SetActive(false);
+        wormPlaying = false;
+    }
+
+    IEnumerator Worm2()
+    {
+        wormSound2.SetActive(true);
+        yield return new WaitForSeconds(15f);
+        wormSound2.SetActive(false);
+        wormPlaying = false;
+    }
+
+    IEnumerator Worm3()
+    {
+        wormSound3.SetActive(true);
+        yield return new WaitForSeconds(15f);
+        wormSound3.SetActive(false);
+        wormPlaying = false;
     }
 }

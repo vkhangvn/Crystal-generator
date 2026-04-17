@@ -30,8 +30,8 @@ public class Movement : MonoBehaviour
         }
         if (Input.GetKey(KeyCode.A))
         {
-            transform.Translate(speed * Time.deltaTime, 0, 0);
-            moveSOund.SetActive(false);
+            transform.Translate(-speed * Time.deltaTime, 0, 0);
+            moveSOund.SetActive(true);
         }
 
 
