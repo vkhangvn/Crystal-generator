@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\sphereControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\sphereControl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Quit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Quit.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\Pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\SpawnSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\SpawnSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\StartGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\StartGame.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\SpawnSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Assets\\scripts\\SpawnSound.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,11 +26,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
+              "Title": "Quit.cs",
+              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Quit.cs",
+              "RelativeDocumentMoniker": "Assets\\scripts\\Quit.cs",
+              "ToolTip": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Quit.cs",
+              "RelativeToolTip": "Assets\\scripts\\Quit.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-17T13:53:54.858Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "SpawnSound.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\SpawnSound.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\SpawnSound.cs",
@@ -42,15 +55,16 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "StartGame.cs",
               "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\StartGame.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\StartGame.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\StartGame.cs",
               "RelativeToolTip": "Assets\\scripts\\StartGame.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T07:49:06.973Z"
+              "WhenOpened": "2026-04-13T07:49:06.973Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -60,22 +74,9 @@
               "RelativeDocumentMoniker": "Assets\\scripts\\Pathmaker.cs",
               "ToolTip": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\Pathmaker.cs",
               "RelativeToolTip": "Assets\\scripts\\Pathmaker.cs",
-              "ViewState": "AgIAAEIAAAAAAAAAAAAkwFoAAAApAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-04-13T13:23:10.737Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "sphereControl.cs",
-              "DocumentMoniker": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\sphereControl.cs",
-              "RelativeDocumentMoniker": "Assets\\scripts\\sphereControl.cs",
-              "ToolTip": "C:\\Users\\PC\\Documents\\GDS3 A2\\Crystal-generator\\Assets\\scripts\\sphereControl.cs",
-              "RelativeToolTip": "Assets\\scripts\\sphereControl.cs",
-              "ViewState": "AgIAAIoAAAAAAAAAAAAgwLsAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-13T07:43:32.473Z",
               "EditorCaption": ""
             }
           ]
