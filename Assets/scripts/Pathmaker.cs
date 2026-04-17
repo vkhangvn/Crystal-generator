@@ -45,6 +45,7 @@ public class Pathmaker : MonoBehaviour
     public GameObject spawnSystem;
     public GameObject labSound;
     public GameObject scopeSound;
+    public GameObject spawnSound;
 
     // STEP 2: ============================================================================================
     // translate the pseudocode below
@@ -97,11 +98,11 @@ public class Pathmaker : MonoBehaviour
         labSound.SetActive(false);
         scopeSound.SetActive(true);
         numberOfColor = sphereControl.numberOfColor;
+        spawnSound.SetActive(true);
 
         if (numberOfColor == 1)
         {
             randomColor = 1;
-
         }
 
         if (numberOfColor == 2)

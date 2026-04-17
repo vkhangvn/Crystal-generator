@@ -3,16 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|c:\\users\\j2\\documents\\github\\crystal-generator\\assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|c:\\users\\j2\\documents\\github\\crystal-generator\\assets\\scripts\\pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\movement.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|c:\\users\\j2\\documents\\github\\crystal-generator\\assets\\scripts\\spherecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\assets\\scripts\\spherecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spherecontrol.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\assets\\scripts\\pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{D41839F4-43DD-3CB5-D22A-C7545D304A6D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\pathmaker.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,24 +22,23 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "Movement.cs",
               "DocumentMoniker": "C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\Assets\\scripts\\Movement.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Movement.cs",
               "ToolTip": "C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\Assets\\scripts\\Movement.cs",
               "RelativeToolTip": "Assets\\scripts\\Movement.cs",
-              "ViewState": "AgIAAAUAAAAAAAAAAAAxwBYAAAAkAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T10:29:29.958Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-07T10:29:29.958Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "sphereControl.cs",
               "DocumentMoniker": "C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\Assets\\scripts\\sphereControl.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\sphereControl.cs",
@@ -47,20 +46,20 @@
               "RelativeToolTip": "Assets\\scripts\\sphereControl.cs",
               "ViewState": "AgIAAC0AAAAAAAAAAAAowC4AAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T08:37:54.016Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-04-07T08:37:54.016Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Pathmaker.cs",
               "DocumentMoniker": "C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\Assets\\scripts\\Pathmaker.cs",
               "RelativeDocumentMoniker": "Assets\\scripts\\Pathmaker.cs",
               "ToolTip": "C:\\Users\\J2\\Documents\\GitHub\\Crystal-generator\\Assets\\scripts\\Pathmaker.cs",
               "RelativeToolTip": "Assets\\scripts\\Pathmaker.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAQwEwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAADkBAAAAAAAAAAAAAGYAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-04-07T08:35:41.735Z"
+              "WhenOpened": "2026-04-07T08:35:41.735Z",
+              "EditorCaption": ""
             }
           ]
         }
