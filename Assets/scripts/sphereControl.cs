@@ -37,10 +37,13 @@ public class sphereControl : MonoBehaviour
     public bool wormPlaying;
     public int randomSound;
 
+    [SerializeField] private Animator knob;
+    [SerializeField] private Animator spin;
 
     public GameObject scopeCamera;
 
-
+    public bool playKnob;
+    public bool playTurn;
     // Start is called before the first frame update
     void Start()
     {
@@ -111,11 +114,12 @@ public class sphereControl : MonoBehaviour
     public void setSpherelLimit()
     {
         sphereLimitSlider.onValueChanged.AddListener(delegate { sphereChangeCheck(); });
-        
+
     }
 
     public void setCrystalLimit()
     {
+
         crystalLimitSlider.onValueChanged.AddListener(delegate { crystalChangeCheck(); });
 
     }
@@ -129,6 +133,7 @@ public class sphereControl : MonoBehaviour
     public void sphereChangeCheck()
     {
         sphereLimit = sphereLimitSlider.value;
+        StartCoroutine(Knob());
         StartCoroutine(Turn1());
     }
 
@@ -136,12 +141,14 @@ public class sphereControl : MonoBehaviour
     {
         crystalLimit = crystalLimitSlider.value;
         StartCoroutine(Turn2());
+        StartCoroutine(Knob());
     }
 
     public void colorChangeCheck()
     {
         numberOfColor = colorSlider.value;
         StartCoroutine(Turn3());
+        StartCoroutine(turning());
     }
 
     IEnumerator Turn1()
@@ -187,5 +194,19 @@ public class sphereControl : MonoBehaviour
         yield return new WaitForSeconds(15f);
         wormSound3.SetActive(false);
         wormPlaying = false;
+    }
+
+    IEnumerator Knob()
+    {
+        knob.SetBool("Knob", true);
+        yield return new WaitForSeconds(0.5f);
+        knob.SetBool("Knob", false);
+    }
+
+    IEnumerator turning()
+    {
+        spin.SetBool("Turning", true);
+        yield return new WaitForSeconds(0.25f);
+        spin.SetBool("Turning", false);
     }
 }

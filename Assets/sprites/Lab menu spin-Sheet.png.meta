@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 262995406246aa847bd6008d794d0fd5
+guid: 73bc37948fa497e42b160d43d09a1f44
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Lab menu-Sheet_0
+      name: Lab menu spin-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -111,14 +111,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 877300897b4262449ba0ff335736b785
-      internalID: -1269861529
+      spriteID: a1459fab830976b4eb09337322115755
+      internalID: -550132722
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lab menu-Sheet_1
+      name: Lab menu spin-Sheet_1
       rect:
         serializedVersion: 2
         x: 160
@@ -132,14 +132,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 95c898fae7d450348a163ae233e58040
-      internalID: -2038390376
+      spriteID: 824952e6f4061b546b783aecb60f7a53
+      internalID: 1720524578
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Lab menu-Sheet_2
+      name: Lab menu spin-Sheet_2
       rect:
         serializedVersion: 2
         x: 320
@@ -153,8 +153,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8da836771fcdb3a40b1b27ed4e7732f0
-      internalID: -1669901083
+      spriteID: c93a52ca69fa0b046950b54b6cb155a1
+      internalID: 1816272018
       vertices: []
       indices: 
       edges: []
@@ -162,7 +162,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 42087cfcebaae63488689fd7e438d5ec
+    spriteID: 23f7da3920bc790488ab78c59d728b95
     internalID: 0
     vertices: []
     indices: 
@@ -170,9 +170,9 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Lab menu-Sheet_0: -1269861529
-      Lab menu-Sheet_1: -2038390376
-      Lab menu-Sheet_2: -1669901083
+      Lab menu spin-Sheet_0: -550132722
+      Lab menu spin-Sheet_1: 1720524578
+      Lab menu spin-Sheet_2: 1816272018
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
