@@ -1,11 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Security.Cryptography;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using static UnityEditor.Experimental.GraphView.GraphView;
-using static UnityEditor.FilePathAttribute;
 
 // INTRO TO PROC GEN LAB
 // all students: complete steps 1-6, as listed in this file

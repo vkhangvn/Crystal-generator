@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class sphereControl : MonoBehaviour
@@ -37,6 +38,7 @@ public class sphereControl : MonoBehaviour
     public bool wormPlaying;
     public int randomSound;
 
+
     [SerializeField] private Animator knob;
     [SerializeField] private Animator spin;
 
@@ -44,6 +46,8 @@ public class sphereControl : MonoBehaviour
 
     public bool playKnob;
     public bool playTurn;
+
+    public bool sceneLoaded;
     // Start is called before the first frame update
     void Start()
     {
@@ -51,7 +55,7 @@ public class sphereControl : MonoBehaviour
         sphereLimit = 1;
         crystalLimit = 500;
         numberOfColor = 1;
-
+  
     }
 
     // Update is called once per frame

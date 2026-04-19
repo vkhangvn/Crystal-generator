@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3216178842880754180}
   - component: {fileID: 2583073968630728724}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: sphereManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -47,3 +47,29 @@ MonoBehaviour:
   totalSphere: 0
   sphereManager: {fileID: 8365979833746649217}
   spawnSphere: 1
+  totalCrystal: 0
+  spawnCrystal: 1
+  microsopeCamera: {fileID: 0}
+  crystalLimit: 0
+  sphereLimit: 0
+  sphereLimitSlider: {fileID: 0}
+  crystalLimitSlider: {fileID: 0}
+  colorSlider: {fileID: 0}
+  numberOfColor: 0
+  createHead: 0
+  moveSpeed: 0
+  PathMakerSphere: {fileID: 0}
+  Pathmaker: {fileID: 0}
+  turningSound1: {fileID: 0}
+  turningSound2: {fileID: 0}
+  turningSound3: {fileID: 0}
+  wormSound1: {fileID: 0}
+  wormSound2: {fileID: 0}
+  wormSound3: {fileID: 0}
+  wormPlaying: 0
+  randomSound: 0
+  knob: {fileID: 0}
+  spin: {fileID: 0}
+  scopeCamera: {fileID: 0}
+  playKnob: 0
+  playTurn: 0
