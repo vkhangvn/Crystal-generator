@@ -39,6 +39,11 @@ public class MonsteAttack : MonoBehaviour
         StartCoroutine(redparticle());
     }
 
+    public void redBurst2()
+    {
+        StartCoroutine(redparticle2());
+    }
+
     public void greenBurst()
     {
         StartCoroutine(greenparticle());
