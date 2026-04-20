@@ -44,6 +44,8 @@ public class Pathmaker : MonoBehaviour
     public GameObject scopeSound;
     public GameObject spawnSound;
 
+ 
+
     // STEP 2: ============================================================================================
     // translate the pseudocode below
 

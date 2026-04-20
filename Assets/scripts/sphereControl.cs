@@ -48,6 +48,8 @@ public class sphereControl : MonoBehaviour
     public bool playTurn;
 
     public bool sceneLoaded;
+
+    public List<GameObject> soundList;
     // Start is called before the first frame update
     void Start()
     {
